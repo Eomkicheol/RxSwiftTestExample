@@ -24,6 +24,10 @@
 		5F8D64E32236AD120032E6E6 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8D64E22236AD120032E6E6 /* BaseCollectionViewCell.swift */; };
 		5F8D64E52236AD300032E6E6 /* IndicatorFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8D64E42236AD300032E6E6 /* IndicatorFooterView.swift */; };
 		5F8D64E72236AD430032E6E6 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8D64E62236AD430032E6E6 /* BaseNavigationController.swift */; };
+		5F8D64EC2236B1290032E6E6 /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8D64EB2236B1290032E6E6 /* UserSearchViewController.swift */; };
+		5F8D64EE2236B1880032E6E6 /* UserSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8D64ED2236B1880032E6E6 /* UserSearchViewModel.swift */; };
+		5F8D64F02236B3160032E6E6 /* UserSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8D64EF2236B3160032E6E6 /* UserSearchCollectionViewCell.swift */; };
+		5F8D64F22236B4AA0032E6E6 /* UserSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8D64F12236B4AA0032E6E6 /* UserSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		5F8D64E22236AD120032E6E6 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F8D64E42236AD300032E6E6 /* IndicatorFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorFooterView.swift; sourceTree = "<group>"; };
 		5F8D64E62236AD430032E6E6 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		5F8D64EB2236B1290032E6E6 /* UserSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
+		5F8D64ED2236B1880032E6E6 /* UserSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewModel.swift; sourceTree = "<group>"; };
+		5F8D64EF2236B3160032E6E6 /* UserSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		5F8D64F12236B4AA0032E6E6 /* UserSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSection.swift; sourceTree = "<group>"; };
 		8CB28C3CBFBE2B2F3B36EE36 /* Pods-RxSwiftTestExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftTestExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftTestExample/Pods-RxSwiftTestExample.release.xcconfig"; sourceTree = "<group>"; };
 		D362FE2ECC4143B1D1281E7D /* Pods-RxSwiftTestExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftTestExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftTestExample/Pods-RxSwiftTestExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,8 +172,36 @@
 		5F8D64CD223691030032E6E6 /* Contents */ = {
 			isa = PBXGroup;
 			children = (
+				5F8D64E82236B0F90032E6E6 /* User */,
 			);
 			path = Contents;
+			sourceTree = "<group>";
+		};
+		5F8D64E82236B0F90032E6E6 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				5F8D64E92236B10C0032E6E6 /* Cells */,
+				5F8D64EB2236B1290032E6E6 /* UserSearchViewController.swift */,
+				5F8D64ED2236B1880032E6E6 /* UserSearchViewModel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		5F8D64E92236B10C0032E6E6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5F8D64EA2236B1150032E6E6 /* Section */,
+				5F8D64EF2236B3160032E6E6 /* UserSearchCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5F8D64EA2236B1150032E6E6 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				5F8D64F12236B4AA0032E6E6 /* UserSection.swift */,
+			);
+			path = Section;
 			sourceTree = "<group>";
 		};
 		652240BF10BFEA341A95B311 /* Pods */ = {
@@ -196,6 +232,7 @@
 				5F8D64AD22368FB70032E6E6 /* Sources */,
 				5F8D64AE22368FB70032E6E6 /* Frameworks */,
 				5F8D64AF22368FB70032E6E6 /* Resources */,
+				E2A9E419C8B19F21596A4143 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,6 +311,54 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E2A9E419C8B19F21596A4143 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftTestExample/Pods-RxSwiftTestExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxViewBinder/RxViewBinder.framework",
+				"${BUILT_PRODUCTS_DIR}/RxViewController/RxViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Sniffer/Sniffer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxViewBinder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sniffer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftTestExample/Pods-RxSwiftTestExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -285,15 +370,19 @@
 				5F8D64D32236A4EE0032E6E6 /* CommonFunc.swift in Sources */,
 				5F8D64DB2236ABE70032E6E6 /* UserModel.swift in Sources */,
 				5F8D64D92236A8220032E6E6 /* AppService.swift in Sources */,
+				5F8D64EC2236B1290032E6E6 /* UserSearchViewController.swift in Sources */,
+				5F8D64EE2236B1880032E6E6 /* UserSearchViewModel.swift in Sources */,
 				5F8D64B522368FB70032E6E6 /* AppDelegate.swift in Sources */,
 				5F8D64E52236AD300032E6E6 /* IndicatorFooterView.swift in Sources */,
 				5F8D64E32236AD120032E6E6 /* BaseCollectionViewCell.swift in Sources */,
 				5F8D64DF2236ACB90032E6E6 /* NetworkIndicatorView.swift in Sources */,
+				5F8D64F22236B4AA0032E6E6 /* UserSection.swift in Sources */,
 				5F8D64E72236AD430032E6E6 /* BaseNavigationController.swift in Sources */,
 				5F8D64DD2236AC7E0032E6E6 /* BaseViewController.swift in Sources */,
 				5F8D64D72236A7DD0032E6E6 /* AppServiceType.swift in Sources */,
 				5F8D64D12236A2660032E6E6 /* CommonExtension.swift in Sources */,
 				5F8D64CF2236919C0032E6E6 /* ProviderObject.swift in Sources */,
+				5F8D64F02236B3160032E6E6 /* UserSearchCollectionViewCell.swift in Sources */,
 				5F8D64E12236ACFF0032E6E6 /* CollectionEmptyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/RxSwiftTestExample/SupportFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,7 +532,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Com.Study.RxSwiftTestExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -453,6 +543,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/RxSwiftTestExample/SupportFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +551,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Com.Study.RxSwiftTestExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -15,6 +15,12 @@ enum ProviderObject {
 
 extension ProviderObject {
     var viewController: UIViewController {
-        return UIViewController()
+        switch self {
+        case .userSearch:
+            let viewModel: UserSearchViewModel = UserSearchViewModel()
+            let viewController: UserSearchViewController = UserSearchViewController(viewBinder: viewModel)
+            let navigationController: BaseNavigationController = BaseNavigationController(rootViewController: viewController)
+            return navigationController
+        }
     }
 }

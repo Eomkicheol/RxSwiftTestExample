@@ -22,8 +22,6 @@ extension AppAPI: TargetType {
         switch self {
         case .userSearch:
             return URL(string: "https://api.github.com")!
-        default:
-            break
         }
     }
     
@@ -31,8 +29,6 @@ extension AppAPI: TargetType {
         switch self {
         case .userSearch:
             return "/search/users"
-        default:
-            break
         }
     }
     
@@ -40,8 +36,6 @@ extension AppAPI: TargetType {
         switch self {
         case .userSearch:
             return .get
-        default:
-            break
         }
     }
     
@@ -53,8 +47,6 @@ extension AppAPI: TargetType {
         switch self {
         case .userSearch:
             return .requestParameters(parameters: parameters!, encoding: parameterEncoding)
-        default:
-            break
         }
     }
     
@@ -62,8 +54,6 @@ extension AppAPI: TargetType {
         switch self {
         case let .userSearch(userName: userName, page: page):
             return ["q": userName, "page": page]
-        default:
-            break
         }
     }
     
@@ -72,10 +62,8 @@ extension AppAPI: TargetType {
     }
     
     var headers: [String : String]? {
-        return ["Authorization": "token"]
+        return ["Authorization": "token 11c925ac4a6e8a2703d8626d7b550e687bf88768"]
     }
-    
-    
 }
 
 

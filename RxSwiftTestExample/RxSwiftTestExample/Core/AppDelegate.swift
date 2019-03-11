@@ -31,6 +31,7 @@ extension AppDelegate {
         self.window = {
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.backgroundColor = .white
+            window.rootViewController = ProviderObject.userSearch.viewController
             window.makeKeyAndVisible()
             return window
         }()
