@@ -1,0 +1,83 @@
+PODS:
+  - Alamofire (4.8.0)
+  - Differentiator (3.1.0)
+  - Kingfisher (4.10.1)
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.2):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - Result (3.2.4)
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxOptional (3.6.2):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+  - RxViewBinder (1.0.0):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxViewController (0.4.0):
+    - RxCocoa (>= 4.0.0)
+    - RxSwift (>= 4.0.0)
+  - SnapKit (4.0.1)
+  - Sniffer (1.6.1)
+
+DEPENDENCIES:
+  - Kingfisher
+  - Moya (~> 11.0)
+  - Moya/RxSwift (~> 11.0)
+  - RxCocoa (~> 4.0)
+  - RxDataSources (~> 3.0)
+  - RxOptional
+  - RxSwift (~> 4.0)
+  - RxViewBinder
+  - RxViewController
+  - SnapKit (~> 4.0.0)
+  - Sniffer
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Differentiator
+    - Kingfisher
+    - Moya
+    - Result
+    - RxAtomic
+    - RxCocoa
+    - RxDataSources
+    - RxOptional
+    - RxSwift
+    - RxViewBinder
+    - RxViewController
+    - SnapKit
+    - Sniffer
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  RxViewBinder: f45525244696cb40cfc2b603a9539edb019bbf36
+  RxViewController: 359bbc2fda373a78605b2735afb0f9f4f3f6c3e4
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  Sniffer: a5d3a1d5478afe874a78cd254923c43ae20262df
+
+PODFILE CHECKSUM: 356793da7fa3fc28fae7b7dbbb9432b6bfb33034
+
+COCOAPODS: 1.5.3
