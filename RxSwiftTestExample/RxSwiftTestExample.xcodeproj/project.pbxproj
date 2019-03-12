@@ -28,6 +28,7 @@
 		5F8D64EE2236B1880032E6E6 /* UserSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8D64ED2236B1880032E6E6 /* UserSearchViewModel.swift */; };
 		5F8D64F02236B3160032E6E6 /* UserSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8D64EF2236B3160032E6E6 /* UserSearchCollectionViewCell.swift */; };
 		5F8D64F22236B4AA0032E6E6 /* UserSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8D64F12236B4AA0032E6E6 /* UserSection.swift */; };
+		5FDDB3E02237DE0200D0DC93 /* CoifigProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDDB3DF2237DE0200D0DC93 /* CoifigProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		5F8D64ED2236B1880032E6E6 /* UserSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewModel.swift; sourceTree = "<group>"; };
 		5F8D64EF2236B3160032E6E6 /* UserSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		5F8D64F12236B4AA0032E6E6 /* UserSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSection.swift; sourceTree = "<group>"; };
+		5FDDB3DF2237DE0200D0DC93 /* CoifigProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoifigProperties.swift; sourceTree = "<group>"; };
 		8CB28C3CBFBE2B2F3B36EE36 /* Pods-RxSwiftTestExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftTestExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftTestExample/Pods-RxSwiftTestExample.release.xcconfig"; sourceTree = "<group>"; };
 		D362FE2ECC4143B1D1281E7D /* Pods-RxSwiftTestExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftTestExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftTestExample/Pods-RxSwiftTestExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 			children = (
 				5F8D64B422368FB70032E6E6 /* AppDelegate.swift */,
 				5F8D64CE2236919C0032E6E6 /* ProviderObject.swift */,
+				5FDDB3DF2237DE0200D0DC93 /* CoifigProperties.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			files = (
 				5F8D64D52236A60D0032E6E6 /* AppAPI.swift in Sources */,
 				5F8D64D32236A4EE0032E6E6 /* CommonFunc.swift in Sources */,
+				5FDDB3E02237DE0200D0DC93 /* CoifigProperties.swift in Sources */,
 				5F8D64DB2236ABE70032E6E6 /* UserModel.swift in Sources */,
 				5F8D64D92236A8220032E6E6 /* AppService.swift in Sources */,
 				5F8D64EC2236B1290032E6E6 /* UserSearchViewController.swift in Sources */,

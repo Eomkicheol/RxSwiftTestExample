@@ -33,7 +33,22 @@ final class UserSearchViewController: BaseViewController, BindView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserSearchCollectionViewCell.reuseIdentifier, for: indexPath)
             
             guard let resultCell = cell as? UserSearchCollectionViewCell else { return cell }
+            
             resultCell.configure(value: value)
+            
+            resultCell.rx.imageTapped
+                .bind(onNext: {
+                    print($0)
+                })
+                .disposed(by: resultCell.disposedBag)
+            
+            resultCell.rx.nameTapped
+                .bind(onNext: {
+                    print($0)
+                })
+                .disposed(by: resultCell.disposedBag)
+            
+            
             return resultCell
         }
         }, configureSupplementaryView: { dataSource, collectionView, kind, indexPath -> UICollectionReusableView in

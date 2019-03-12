@@ -62,7 +62,7 @@ extension AppAPI: TargetType {
     }
     
     var headers: [String : String]? {
-        return ["Authorization": "token e3000d07c509663b29c418e990a1181e3e30bb02"]
+        return ["Authorization": "token \(CoifigProperties.authKey)"]
     }
 }
 
