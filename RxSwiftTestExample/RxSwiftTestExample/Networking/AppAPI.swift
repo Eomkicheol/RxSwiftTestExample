@@ -62,7 +62,7 @@ extension AppAPI: TargetType {
     }
     
     var headers: [String : String]? {
-        return ["Authorization": "token 11c925ac4a6e8a2703d8626d7b550e687bf88768"]
+        return ["Authorization": "token e3000d07c509663b29c418e990a1181e3e30bb02"]
     }
 }
 

@@ -36,6 +36,15 @@ final class UserSearchViewController: BaseViewController, BindView {
             resultCell.configure(value: value)
             return resultCell
         }
+        }, configureSupplementaryView: { dataSource, collectionView, kind, indexPath -> UICollectionReusableView in
+            if kind == UICollectionView.elementKindSectionFooter {
+                let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter,
+                                                                           withReuseIdentifier: IndicatorFooterView.reuseIdentifier,
+                                                                           for: indexPath)
+                guard let footerView = view as? IndicatorFooterView else { return view }
+                return footerView
+            }
+            return UICollectionReusableView()
     })
     
     
@@ -135,6 +144,15 @@ final class UserSearchViewController: BaseViewController, BindView {
             .map { ViewBinder.Command.search($0) }
             .bind(to: viewBinder.command)
             .disposed(by: self.disposeBag)
+        
+        collectionView.rx.willDisplayCell
+            .filter {[weak self] in
+                guard let sectionCount = self?.dataSource.sectionModels[$0.at.section].items.count else { return false }
+                return $0.at.row >= sectionCount - 1
+            }
+            .map {[weak self] _ in ViewBinder.Command.loadMoreSearch(self?.searchBar.text ?? "" )}
+            .bind(to: viewBinder.command )
+            .disposed(by: self.disposeBag)
     }
     
     func state(viewBinder: ViewBinder) {
@@ -154,6 +172,13 @@ final class UserSearchViewController: BaseViewController, BindView {
             })
             .map { [UserSection.searchUserSection( $0.map { UserSectionItems.searchUser($0) } )]}
             .drive(collectionView.rx.items(dataSource: dataSource))
+            .disposed(by: self.disposeBag)
+        
+        viewBinder.state
+            .loadMoreIndicator
+            .delay(0.2)
+            .map { $0 == true ? CGSize(width: UIScreen.main.bounds.width, height: 22) : .zero }
+            .drive(flowLayout.rx.footerSize)
             .disposed(by: self.disposeBag)
     }
 }
