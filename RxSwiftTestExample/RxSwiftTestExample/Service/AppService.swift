@@ -28,12 +28,11 @@ class DefaultAlamofireManager: Alamofire.SessionManager {
 class AppService: AppServiceType {
     
     //싱글톤
-    static let sharedInstance = AppService()
-    
-    static var shared: AppService {
-        return sharedInstance
-    }
-    
+		static let shared = AppService()
+	
+		private init(){}
+	
+	
     private let provider: MoyaProvider<AppAPI> = {
         let provider = MoyaProvider<AppAPI>(endpointClosure: MoyaProvider.defaultEndpointMapping,
                                             requestClosure: MoyaProvider<AppAPI>.defaultRequestMapping,
@@ -49,14 +48,15 @@ class AppService: AppServiceType {
         return provider.rx
             .request(api)
             .asObservable()
-            .flatMap({ value -> Observable<Response> in
-                guard value.statusCode >= 200, value.statusCode < 300  else { return Observable.error(AppAPIError.message) }
-                return Observable.create({ observer -> Disposable in
-                    observer.onNext(value)
-                    observer.onCompleted()
-                    return Disposables.create()
-                })
-            })
+						.filterSuccessfulStatusCodes()
+//            .flatMap({ value -> Observable<Response> in
+//                guard value.statusCode >= 200, value.statusCode < 300  else { return Observable.error(AppAPIError.message) }
+//                return Observable.create({ observer -> Disposable in
+//                    observer.onNext(value)
+//                    observer.onCompleted()
+//                    return Disposables.create()
+//                })
+//            })
     }
     
     
