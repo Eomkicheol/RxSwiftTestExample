@@ -9,7 +9,7 @@
 import Foundation
 
 
-func DebugLog(_ message: Any, file: String = #file, function: String = #function, line: Int = #line) {
+func DebugLog(_ message: Any, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
     #if DEBUGE
     let fileName = file.split(separator: "/").last ?? ""
     let funcName = function.split(separator: "(").first ?? ""
@@ -17,7 +17,7 @@ func DebugLog(_ message: Any, file: String = #file, function: String = #function
     #endif
 }
 
-func ErrorLog(_ message: Any, file: String = #file, function: String = #function, line: Int = #line) {
+func ErrorLog(_ message: Any, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
     #if DEBUGE
     let fileName = file.split(separator: "/").last ?? ""
     let funcName = function.split(separator: "(").first ?? ""
